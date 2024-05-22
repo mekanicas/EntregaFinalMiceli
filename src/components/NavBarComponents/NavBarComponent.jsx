@@ -1,4 +1,4 @@
-import SVGComponent from "./cartwidget.jsx";
+import SVGComponent from "./CartWidget.jsx";
 
 const NavBarComponent = () => {
   return (
