@@ -1,18 +1,21 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "../pages/Home";
 import ItemDetailsContainer from "../pages/ItemDetailsContainer";
 import NavBarComponent from "../components/NavBarComponents/NavBarComponent";
 import FooterBarComponent from "../components/FooterBarComponents/FooterBarComponent";
 
 export const MainRoutes = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <NavBarComponent />
       <Routes>
-        <Route path="/" element={<Home pageTitle="Inicio" />}></Route>
-        <Route path="/products/:id" element={<ItemDetailsContainer />}></Route>
+        <Route path="/" element={<Home pageTitle="Productos" />} />
+        <Route path="/products/:id" element={<ItemDetailsContainer />} />
       </Routes>
       <FooterBarComponent />
-    </BrowserRouter>
+    </Router>
   );
 };
+
+export default MainRoutes;

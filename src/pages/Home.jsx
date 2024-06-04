@@ -1,13 +1,15 @@
-import React from "react";
-import ItemListContainerComponent from "../components/ItemListContainerComponent/ItemListContainerComponent";
+import React, { useEffect } from "react";
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer.jsx";
+import ProductsListComponent from "../components/ProductListComponents/ProductListComponent";
 
-const Home = ({pageTitle}) => {
-    useEffect(() => {
-        document.title=`Inicio - ${pageTitle}`;
-    }, []) 
+const Home = ({ pageTitle }) => {
+  useEffect(() => {
+    document.title = `Inicio - ${pageTitle}`;
+  }, []);
   return (
     <>
-      <ItemListContainerComponent />
+      <ItemListContainer greeting="Bienvenido a Skull Clothing 💀" />
+      <ProductsListComponent />
     </>
   );
 };
