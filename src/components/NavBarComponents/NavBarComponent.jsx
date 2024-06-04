@@ -1,9 +1,12 @@
+import React from "react";
 import SVGComponent from "./CartWidget.jsx";
+import { Link } from "react-router-dom";
+import { getAllCategories } from "../../services/productsServices.js";
 
 const NavBarComponent = () => {
   return (
     <nav className="navbar navbar-expand-lg">
-      <h1 className="mt-3 ms-2 logo">J</h1>
+      <Link to="/">Inicio</Link>
       <div className="collapse navbar-collapse justify-content-center">
         <ul className="menu navbar-nav">
           <li className="nav-item">

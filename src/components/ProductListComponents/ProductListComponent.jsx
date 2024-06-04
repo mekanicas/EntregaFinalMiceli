@@ -4,6 +4,8 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import ListGroup from "react-bootstrap/ListGroup";
+import { Link } from "react-router-dom";
+
 import { getAllProducts } from "../../services/productsServices";
 
 const ProductsListComponent = () => {
@@ -32,6 +34,21 @@ const ProductsListComponent = () => {
     color: "white",
     border: "none",
   };
+
+  /*   const deleteProduct = (id) => {
+    deleteProductById(id)
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  };
+
+  const createNewProduct = () => {
+    const newProduct = {
+      title: "Nuevo Producto",
+    };
+    createProduct(newProduct)
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  }; */
 
   React.useEffect(() => {
     const fetchProducts = async () => {
@@ -71,7 +88,8 @@ const ProductsListComponent = () => {
               </ListGroup.Item>
             </ListGroup>
             <Card.Body className="mt-2">
-              <Button variant="primary">Ir a detalle</Button>
+              <Button variant="primary">Go somewhere</Button>
+              {/* <Link to={`/item/${product.id}`}>Ir al detalle</Link> */}
             </Card.Body>
           </Card>
         </Col>
