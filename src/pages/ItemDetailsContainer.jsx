@@ -10,40 +10,112 @@ import Col from "react-bootstrap/Col";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getProductById } from "../services/productsServices";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const ItemDetailsContainer = () => {
-  const [product, setProduct] = React.useState({});
+  const [product, setProduct] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
 
   const { id } = useParams();
 
   React.useEffect(() => {
+    setLoading(true);
     getProductById(id)
-      .then((productData) => setProduct(productData))
-      .catch((err) => console.error(err));
+      .then((productData) => {
+        setProduct(productData);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, [id]);
 
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={product.image} />
-      <Card.Body>
-        <Card.Title>{product.title}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item className="fs-1">$ {product.price}</ListGroup.Item>
-        <ListGroup.Item>{product.category}</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Body className="mt-2 container">
-          <Button className="p-2 g-col-6 row" variant="success">
-            Comprar ahora
-          </Button>
-          <Link to="#" className="row mt-2">
-            <CustomButton>Ver más</CustomButton>
-          </Link>
-        </Card.Body>
-      </Card.Body>
-    </Card>
+    <Row xs={1} md={3} className="g-4">
+      <Col key={product ? product.id : "skeleton"}>
+        <Card style={{ width: "18rem" }}>
+          {loading ? (
+            <Skeleton height={180} />
+          ) : (
+            <Card.Img variant="top" src={product.image} />
+          )}
+          <Card.Body>
+            {loading ? (
+              <>
+                <Skeleton
+                  height={30}
+                  baseColor="#2A2D33"
+                  highlightColor="#3A3D43"
+                  duration={5}
+                />
+                <Skeleton
+                  count={3}
+                  baseColor="#2A2D33"
+                  highlightColor="#3A3D43"
+                  duration={5}
+                />
+              </>
+            ) : (
+              <>
+                <Card.Title>{product.title}</Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+              </>
+            )}
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            {loading ? (
+              <>
+                <ListGroup.Item>
+                  <Skeleton
+                    height={30}
+                    baseColor="#2A2D33"
+                    highlightColor="#3A3D43"
+                    duration={5}
+                  />
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Skeleton
+                    height={30}
+                    baseColor="#2A2D33"
+                    highlightColor="#3A3D43"
+                    duration={5}
+                  />
+                </ListGroup.Item>
+              </>
+            ) : (
+              <>
+                <ListGroup.Item className="fs-1">
+                  $ {product.price}
+                </ListGroup.Item>
+                <ListGroup.Item>{product.category}</ListGroup.Item>
+              </>
+            )}
+          </ListGroup>
+          <Card.Body className="mt-2 container">
+            {loading ? (
+              <Skeleton
+                height={40}
+                width="100%"
+                baseColor="#2A2D33"
+                highlightColor="#3A3D43"
+                duration={5}
+              />
+            ) : (
+              <>
+                <Button className="p-2 g-col-6 row" variant="success">
+                  Comprar ahora
+                </Button>
+                <Link to="#" className="row mt-2">
+                  <CustomButton>Ver más</CustomButton>
+                </Link>
+              </>
+            )}
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

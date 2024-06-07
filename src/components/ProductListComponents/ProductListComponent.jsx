@@ -5,12 +5,15 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import { getAllProducts } from "../../services/productsServices";
 import CustomButton from "../StyledComponents/CustomButton";
 
 const ProductsListComponent = () => {
   const [products, setProducts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
   const customItemStyle = {
     backgroundColor: "#23262C",
     color: "white",
@@ -56,18 +59,83 @@ const ProductsListComponent = () => {
       try {
         const fetchedProducts = await getAllProducts();
         setProducts(fetchedProducts);
+        setLoading(false);
       } catch (error) {
         console.error(error);
+        setLoading(false);
       }
     };
     fetchProducts();
   }, []);
+
+  if (loading) {
+    return (
+      <Row xs={1} md={3} className="g-4">
+        {[...Array(9)].map((_, index) => (
+          <Col key={index}>
+            <Card className="mt-2" style={customItemStyle}>
+              <Skeleton height={200} style={customImageStyle} />
+              <Card.Body>
+                <Skeleton
+                  height={30}
+                  baseColor="#2A2D33"
+                  highlightColor="#3A3D43"
+                  duration={5}
+                />
+                <Skeleton
+                  count={3}
+                  style={{ marginTop: 10 }}
+                  baseColor="#2A2D33"
+                  highlightColor="3A3D43"
+                  duration={5}
+                />
+              </Card.Body>
+              <ListGroup className="list-group-flush">
+                <ListGroup.Item style={customGroupStyle}>
+                  <Skeleton
+                    height={20}
+                    baseColor="#2A2D33"
+                    highlightColor="#3A3D43"
+                    duration={5}
+                  />
+                </ListGroup.Item>
+                <ListGroup.Item className="fs-1" style={customGroupStyle}>
+                  <Skeleton
+                    height={40}
+                    baseColor="#2A2D33"
+                    highlightColor="#3A3D43"
+                    duration={5}
+                  />
+                </ListGroup.Item>
+              </ListGroup>
+              <Card.Body className="mt-2">
+                <Skeleton
+                  height={35}
+                  width={100}
+                  baseColor="#2A2D33"
+                  highlightColor="#3A3D43"
+                  duration={5}
+                />
+                <Skeleton
+                  height={35}
+                  width={100}
+                  style={{ marginLeft: "5px" }}
+                  baseColor="#2A2D33"
+                  highlightColor="#3A3D43"
+                  duration={5}
+                />
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    );
+  }
+
   return (
     <Row xs={1} md={3} className="g-4">
-      {" "}
-      {products.map((product, index) => (
+      {products.map((product) => (
         <Col key={product.id}>
-          {" "}
           <Card className="mt-2" style={customItemStyle}>
             <Card.Img
               style={customImageStyle}
@@ -100,4 +168,5 @@ const ProductsListComponent = () => {
     </Row>
   );
 };
+
 export default ProductsListComponent;
