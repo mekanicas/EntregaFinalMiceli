@@ -11,7 +11,7 @@ export const MainRoutes = () => {
       <NavBarComponent />
       <Routes>
         <Route path="/" element={<Home pageTitle="Productos" />} />
-        <Route path="/products/:id" element={<ItemDetailsContainer />} />
+        <Route path="item/:id" element={<ItemDetailsContainer />} />
       </Routes>
       <FooterBarComponent />
     </Router>

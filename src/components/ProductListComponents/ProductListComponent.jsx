@@ -7,6 +7,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 
 import { getAllProducts } from "../../services/productsServices";
+import CustomButton from "../StyledComponents/CustomButton";
 
 const ProductsListComponent = () => {
   const [products, setProducts] = React.useState([]);
@@ -89,7 +90,9 @@ const ProductsListComponent = () => {
             </ListGroup>
             <Card.Body className="mt-2">
               <Button variant="primary">Go somewhere</Button>
-              {/* <Link to={`/item/${product.id}`}>Ir al detalle</Link> */}
+              <CustomButton className="ms-5">
+                <Link to={`/item/${product.id}`}>Ir al detalle</Link>
+              </CustomButton>
             </Card.Body>
           </Card>
         </Col>
