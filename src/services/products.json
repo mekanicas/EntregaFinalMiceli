@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Remera Skull",
+    "description": "Black T-shirt with a detailed skull design, including crossed guitars, flames, and thorny vines.",
+    "category": "T-shirts",
+    "quantity": 50,
+    "price": 29.99,
+    "discountPercentage": 10,
+    "image": "/path/to/remera_skull.png"
+  },
+  {
+    "id": 2,
+    "title": "Campera de Cuero",
+    "description": "Black leather jacket with metal studs and a subtle skull design on the back.",
+    "category": "Jackets",
+    "quantity": 30,
+    "price": 79.99,
+    "discountPercentage": 15,
+    "image": "/path/to/campera_cuero.png"
+  },
+  {
+    "id": 3,
+    "title": "Campera de Cuero Marrón",
+    "description": "Brown leather jacket with intricate gothic ornamental details.",
+    "category": "Jackets",
+    "quantity": 25,
+    "price": 74.99,
+    "discountPercentage": 10,
+    "image": "/path/to/campera_cuero_marron.png"
+  },
+  {
+    "id": 4,
+    "title": "Pantalón Rockero",
+    "description": "Black rock-themed pants with multiple zippers, metal studs, and chain details.",
+    "category": "Pants",
+    "quantity": 40,
+    "price": 49.99,
+    "discountPercentage": 5,
+    "image": "/path/to/pantalon_rockero.png"
+  },
+  {
+    "id": 5,
+    "title": "Pantalón Metallica",
+    "description": "Black pants with a Metallica-themed design, including bold graphics and album-inspired art.",
+    "category": "Pants",
+    "quantity": 35,
+    "price": 54.99,
+    "discountPercentage": 7,
+    "image": "/path/to/pantalon_metallica.png"
+  },
+  {
+    "id": 6,
+    "title": "Pantalón Guns N' Roses",
+    "description": "Black pants with a Guns N' Roses-themed design, featuring roses and guns.",
+    "category": "Pants",
+    "quantity": 30,
+    "price": 52.99,
+    "discountPercentage": 10,
+    "image": "/path/to/pantalon_guns_n_roses.png"
+  },
+  {
+    "id": 7,
+    "title": "Remera Golden Skull",
+    "description": "Black T-shirt with an ornate golden skull design.",
+    "category": "T-shirts",
+    "quantity": 45,
+    "price": 32.99,
+    "discountPercentage": 12,
+    "image": "/path/to/remera_golden_skull.png"
+  },
+  {
+    "id": 8,
+    "title": "Remera Minimalist Skull",
+    "description": "Black T-shirt with a small skull and crossed guns design.",
+    "category": "T-shirts",
+    "quantity": 50,
+    "price": 27.99,
+    "discountPercentage": 8,
+    "image": "/path/to/remera_minimalist_skull.png"
+  },
+  {
+    "id": 9,
+    "title": "Cinturón Skull",
+    "description": "Black leather belt with a silver skull buckle and gothic patterns.",
+    "category": "Belts",
+    "quantity": 60,
+    "price": 19.99,
+    "discountPercentage": 5,
+    "image": "/path/to/cinturon_skull.png"
+  },
+  {
+    "id": 10,
+    "title": "Remera Básica Negra",
+    "description": "Plain black T-shirt without any designs.",
+    "category": "T-shirts",
+    "quantity": 70,
+    "price": 24.99,
+    "discountPercentage": 5,
+    "image": "/path/to/remera_basica_negra.png"
+  },
+  {
+        "id": 11,
+        "title": "Remera Crisis Nórdica",
+        "description": "Black T-shirt with a Nordic vs Skull Legion-themed design, featuring a detailed battle scene.",
+        "category": "T-shirts",
+        "quantity": 40,
+        "price": 34.99,
+        "discountPercentage": 10,
+        "image": "/path/to/remera_crisis_nordica.png"
+    },
+    {
+        "id": 12,
+        "title": "Campera Nordic vs Skull Legion",
+        "description": "Black leather jacket with a Nordic vs Skull Legion-themed design on the back.",
+        "category": "Jackets",
+        "quantity": 20,
+        "price": 89.99,
+        "discountPercentage": 15,
+        "image": "/path/to/campera_nordic_vs_skull_legion.png"
+    },
+    {
+        "id": 13,
+        "title": "Campera Básica Skull Clothing",
+        "description": "Denim jacket with a Skull Clothing logo and a skull design on the back.",
+        "category": "Jackets",
+        "quantity": 25,
+        "price": 64.99,
+        "discountPercentage": 12,
+        "image": "/path/to/campera_basica_skull_clothing.png"
+    },
+    {
+        "id": 14,
+        "title": "Campera Puffer Skull Clothing",
+        "description": "Black puffer jacket with a Skull Clothing logo and a quilted design.",
+        "category": "Jackets",
+        "quantity": 20,
+        "price": 99.99,
+        "discountPercentage": 20,
+        "image": "/path/to/campera_puffer_skull_clothing.png"
+    },
+    {
+        "id": 15,
+        "title": "Cinturón Táctico Skull",
+        "description": "Black tactical belt with a skull-themed design and multiple pouches.",
+        "category": "Belts",
+        "quantity": 35,
+        "price": 29.99,
+        "discountPercentage": 10,
+        "image": "/path/to/cinturon_tactico_skull.png"
+    },
+    {
+        "id": 16,
+        "title": "Pantalón Básico Baggy Skull",
+        "description": "Black baggy pants with subtle skull embroidery on the pockets.",
+        "category": "Pants",
+        "quantity": 50,
+        "price": 39.99,
+        "discountPercentage": 8,
+        "image": "/path/to/pantalon_basico_baggy_skull.png"
+    },
+    {
+        "id": 17,
+        "title": "Pantalón Skinny Jean Skull Clothing",
+        "description": "Black skinny jeans with 'SKULL CLOTHING' text across the front and skull details on the back pockets.",
+        "category": "Pants",
+        "quantity": 45,
+        "price": 59.99,
+        "discountPercentage": 10,
+        "image": "/path/to/pantalon_skinny_jean_skull_clothing.png"
+    },
+    {
+        "id": 18,
+        "title": "Cinturón Cadena Skull",
+        "description": "Black belt with a skull buckle and a decorative chain.",
+        "category": "Belts",
+        "quantity": 40,
+        "price": 24.99,
+        "discountPercentage": 5,
+        "image": "/path/to/cinturon_cadena_skull.png"
+    }
+]
