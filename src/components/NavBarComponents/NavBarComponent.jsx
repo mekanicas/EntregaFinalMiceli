@@ -1,5 +1,5 @@
 import React from "react";
-import SVGComponent from "./CartWidget.jsx";
+import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent.jsx";
 import { Link } from "react-router-dom";
 import { getAllCategories } from "../../services/productsServices.js";
 import imagenLogo from "./NavBarImages/skull.png";
@@ -35,8 +35,7 @@ const NavBarComponent = () => {
           </li>
         </ul>
       </div>
-      <SVGComponent className="cartComponent mt-3 position-relative" />
-      <span className="cartNumber mt-2">1</span>
+      <CartWidgetComponent />
     </nav>
   );
 };

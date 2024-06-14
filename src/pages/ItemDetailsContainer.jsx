@@ -1,4 +1,5 @@
 import React from "react";
+import {CartContext} from "../context/CartContext"
 import styled from "styled-components";
 import CustomButton from "../components/StyledComponents/CustomButton";
 import Button from "react-bootstrap/Button";
@@ -14,8 +15,20 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const ItemDetailsContainer = () => {
+  const {cart, addToCart, removeFromCart} = React.useContext (CartContext);
+  const [quantity, setQuantity] = React.useState(0)
   const [product, setProduct] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
+
+  const handleAdd = () => {
+    setQuantity(quantity + 1)
+    addToCart(product, 1)
+  }
+
+  const handleRemove = () => {
+    setQuantity(quantity - 1)
+    removeFromCart(product, 1)
+  }
 
   const { id } = useParams();
 
@@ -112,6 +125,23 @@ const ItemDetailsContainer = () => {
                 </Link>
               </>
             )}
+          </Card.Body>
+          <Card.Body className="mt-2 container">
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <button
+                onClick={handleRemove}
+                style={{ color: "black", cursor: "pointer" }}
+              >
+                -
+              </button>
+              <span style={{ margin: "0 10px" }}>{quantity}</span>
+              <button
+                onClick={handleAdd}
+                style={{ color: "black", cursor: "pointer" }}
+              >
+                +
+              </button>
+            </div>
           </Card.Body>
         </Card>
       </Col>

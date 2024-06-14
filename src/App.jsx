@@ -5,11 +5,14 @@ import "./components/FooterBarComponents/FooterBarComponent.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./routes/MainRoutes.jsx";
 import MainRoutes from "./routes/MainRoutes.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 const App = () => {
   return (
     <>
-      <MainRoutes />
+      <CartProvider>
+        <MainRoutes />
+      </CartProvider>
     </>
   );
 };
