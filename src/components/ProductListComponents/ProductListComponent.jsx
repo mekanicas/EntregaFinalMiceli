@@ -45,6 +45,7 @@ const ProductsListComponent = () => {
         const fetchedProducts = await getAllProducts();
         setProducts(fetchedProducts);
         setLoading(false);
+        /* products.map((product) => {console.log(product.image)}); */
       } catch (error) {
         console.error(error);
         setLoading(false);

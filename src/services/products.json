@@ -7,7 +7,7 @@
     "quantity": 50,
     "price": 29.99,
     "discountPercentage": 10,
-    "image": "https://imgur.com/4fJvHTI"
+    "image": "https://i.imgur.com/4fJvHTI.png"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "quantity": 30,
     "price": 79.99,
     "discountPercentage": 15,
-    "image": "https://imgur.com/7xfYZHD"
+    "image": "https://i.imgur.com/7xfYZHD.png"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "quantity": 25,
     "price": 74.99,
     "discountPercentage": 10,
-    "image": "https://imgur.com/bFMbKft"
+    "image": "https://i.imgur.com/bFMbKft.png"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "quantity": 40,
     "price": 49.99,
     "discountPercentage": 5,
-    "image": "https://imgur.com/XZFEqkP"
+    "image": "https://i.imgur.com/XZFEqkP.png"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "quantity": 35,
     "price": 54.99,
     "discountPercentage": 7,
-    "image": "https://imgur.com/0IwzGIv"
+    "image": "https://i.imgur.com/0IwzGIv.png"
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "quantity": 30,
     "price": 52.99,
     "discountPercentage": 10,
-    "image": "https://imgur.com/LZAKv1i"
+    "image": "https://i.imgur.com/LZAKv1i.png"
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "quantity": 45,
     "price": 32.99,
     "discountPercentage": 12,
-    "image": "https://imgur.com/31kBwJc"
+    "image": "https://i.imgur.com/31kBwJc.png"
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "quantity": 50,
     "price": 27.99,
     "discountPercentage": 8,
-    "image": "https://imgur.com/YYpqx1Z"
+    "image": "https://i.imgur.com/YYpqx1Z.png"
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "quantity": 60,
     "price": 19.99,
     "discountPercentage": 5,
-    "image": "https://imgur.com/UDeOVSF"
+    "image": "https://i.imgur.com/UDeOVSF.png"
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "quantity": 70,
     "price": 24.99,
     "discountPercentage": 5,
-    "image": "https://imgur.com/RyHTZBM"
+    "image": "https://i.imgur.com/RyHTZBM.png"
   },
   {
         "id": 11,
@@ -107,7 +107,7 @@
         "quantity": 40,
         "price": 34.99,
         "discountPercentage": 10,
-        "image": "https://imgur.com/VeJX8CE"
+        "image": "https://i.imgur.com/VeJX8CE.png"
     },
     {
         "id": 12,
@@ -117,7 +117,7 @@
         "quantity": 20,
         "price": 89.99,
         "discountPercentage": 15,
-        "image": "https://imgur.com/b7KDmUA"
+        "image": "https://i.imgur.com/b7KDmUA.png"
     },
     {
         "id": 13,
@@ -127,7 +127,7 @@
         "quantity": 25,
         "price": 64.99,
         "discountPercentage": 12,
-        "image": "https://imgur.com/qDYTrtL"
+        "image": "https://i.imgur.com/qDYTrtL.png"
     },
     {
         "id": 14,
@@ -137,7 +137,7 @@
         "quantity": 20,
         "price": 99.99,
         "discountPercentage": 20,
-        "image": "https://imgur.com/vNUk9BP"
+        "image": "https://i.imgur.com/vNUk9BP.png"
     },
     {
         "id": 15,
@@ -147,7 +147,7 @@
         "quantity": 35,
         "price": 29.99,
         "discountPercentage": 10,
-        "image": "https://imgur.com/Ef1PjQv"
+        "image": "https://i.imgur.com/Ef1PjQv.png"
     },
     {
         "id": 16,
@@ -157,7 +157,7 @@
         "quantity": 50,
         "price": 39.99,
         "discountPercentage": 8,
-        "image": "https://imgur.com/c0Lykby"
+        "image": "https://i.imgur.com/c0Lykby.png"
     },
     {
         "id": 17,
@@ -167,7 +167,7 @@
         "quantity": 45,
         "price": 59.99,
         "discountPercentage": 10,
-        "image": "https://imgur.com/RxZ5kns"
+        "image": "https://i.imgur.com/RxZ5kns.png"
     },
     {
         "id": 18,
@@ -177,6 +177,6 @@
         "quantity": 40,
         "price": 24.99,
         "discountPercentage": 5,
-        "image": "https://imgur.com/FT0MVDD"
+        "image": "https://i.imgur.com/FT0MVDD.png"
     }
 ]
