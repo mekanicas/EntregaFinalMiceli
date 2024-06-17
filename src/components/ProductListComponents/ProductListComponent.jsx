@@ -39,21 +39,6 @@ const ProductsListComponent = () => {
     border: "none",
   };
 
-  /*   const deleteProduct = (id) => {
-    deleteProductById(id)
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
-  };
-
-  const createNewProduct = () => {
-    const newProduct = {
-      title: "Nuevo Producto",
-    };
-    createProduct(newProduct)
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err));
-  }; */
-
   React.useEffect(() => {
     const fetchProducts = async () => {
       try {

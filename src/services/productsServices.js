@@ -1,43 +1,36 @@
-import axios from "axios";
+import path from './products.json';
 
 export const getAllProducts = async () => {
   try {
-    const response = await axios.get(
-      "https://fakestoreapi.com/products/category/men's clothing"
-    );
-    return response.data;
+    // No necesitas axios para archivos locales, puedes usar el import directo
+    const response = path;
+    return response;
   } catch (error) {
-    console.error("Error fetching products : ", error);
+    console.error("Error fetching products: ", error);
   }
   return [];
 };
-
-/* export const deleteProductById = (id) => {
-  return axios.delete(`https://fakestoreapi.com/products/${id}`);
-};
-
-export const createNewProduct = (product) => {
-  return axios.post(
-    "https://fakestoreapi.com/products/add",
-    JSON.stringify(product),
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
-}; */
 
 export const getProductById = async (id) => {
   try {
-    const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-    return response.data;
+    // No necesitas axios para archivos locales, puedes usar el import directo
+    const products = path;
+    const product = products.find((prod) => prod.id === id);
+    return product || null;
   } catch (error) {
-    console.error("Error fetching the single product data : ", error);
+    console.error("Error fetching the single product data: ", error);
   }
-  return [];
+  return null; // Devuelve null si no se encuentra el producto
 };
 
-export const getAllCategories = () => {
-  return axios.get("https://fakestoreapi.com/products/categories");
+export const getAllCategories = async () => {
+  try {
+    // No necesitas axios para archivos locales, puedes usar el import directo
+    const products = path;
+    const categories = [...new Set(products.map((prod) => prod.category))];
+    return categories;
+  } catch (error) {
+    console.error("Error fetching categories: ", error);
+  }
+  return [];
 };
