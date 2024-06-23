@@ -7,6 +7,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import "./ProductListComponents.css";
 
 import { getAllProducts } from "../../services/productsServices";
 import CustomButton from "../StyledComponents/CustomButton";
@@ -14,30 +15,6 @@ import CustomButton from "../StyledComponents/CustomButton";
 const ProductsListComponent = () => {
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
-  const customItemStyle = {
-    backgroundColor: "#23262C",
-    color: "white",
-    padding: "10px",
-    height: "600px",
-    flexDirection: "column",
-  };
-  const customImageStyle = {
-    objectFit: "contain",
-    maxHeight: "200px",
-    width: "100%",
-    marginBottom: "10px",
-  };
-  const customItemText = {
-    overflowY: "hidden",
-    textOverFlow: "ellipsis",
-    lineHeight: "1.5",
-    height: "50px",
-  };
-  const customGroupStyle = {
-    backgroundColor: "#2A2D33",
-    color: "white",
-    border: "none",
-  };
 
   React.useEffect(() => {
     const fetchProducts = async () => {
@@ -45,7 +22,6 @@ const ProductsListComponent = () => {
         const fetchedProducts = await getAllProducts();
         setProducts(fetchedProducts);
         setLoading(false);
-        /* products.map((product) => {console.log(product.image)}); */
       } catch (error) {
         console.error(error);
         setLoading(false);
@@ -59,57 +35,11 @@ const ProductsListComponent = () => {
       <Row xs={1} md={3} className="g-4">
         {[...Array(9)].map((_, index) => (
           <Col key={index}>
-            <Card className="mt-2" style={customItemStyle}>
-              <Skeleton height={200} style={customImageStyle} />
+            <Card className="product-card">
+              <Skeleton height={300} className="product-image" />
               <Card.Body>
-                <Skeleton
-                  height={30}
-                  baseColor="#2A2D33"
-                  highlightColor="#3A3D43"
-                  duration={5}
-                />
-                <Skeleton
-                  count={3}
-                  style={{ marginTop: 10 }}
-                  baseColor="#2A2D33"
-                  highlightColor="3A3D43"
-                  duration={5}
-                />
-              </Card.Body>
-              <ListGroup className="list-group-flush">
-                <ListGroup.Item style={customGroupStyle}>
-                  <Skeleton
-                    height={20}
-                    baseColor="#2A2D33"
-                    highlightColor="#3A3D43"
-                    duration={5}
-                  />
-                </ListGroup.Item>
-                <ListGroup.Item className="fs-1" style={customGroupStyle}>
-                  <Skeleton
-                    height={40}
-                    baseColor="#2A2D33"
-                    highlightColor="#3A3D43"
-                    duration={5}
-                  />
-                </ListGroup.Item>
-              </ListGroup>
-              <Card.Body className="mt-2">
-                <Skeleton
-                  height={35}
-                  width={100}
-                  baseColor="#2A2D33"
-                  highlightColor="#3A3D43"
-                  duration={5}
-                />
-                <Skeleton
-                  height={35}
-                  width={100}
-                  style={{ marginLeft: "5px" }}
-                  baseColor="#2A2D33"
-                  highlightColor="#3A3D43"
-                  duration={5}
-                />
+                <Skeleton height={30} />
+                <Skeleton count={3} style={{ marginTop: 10 }} />
               </Card.Body>
             </Card>
           </Col>
@@ -122,32 +52,28 @@ const ProductsListComponent = () => {
     <Row xs={1} md={3} className="g-4">
       {products.map((product) => (
         <Col key={product.id}>
-          <Card className="mt-2" style={customItemStyle}>
+          <Card className="product-card">
             <Card.Img
-              style={customImageStyle}
+              className="product-image"
               variant="top"
               src={product.image}
             />
             <Card.Body>
-              <Card.Title>{product.title}</Card.Title>
-              <Card.Text style={customItemText}>
+              <Card.Title className="product-title">{product.title}</Card.Title>
+              <Card.Text className="product-description">
                 {product.description}
               </Card.Text>
             </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroup.Item style={customGroupStyle}>
-                Categoría : {product.category}
-              </ListGroup.Item>
-              <ListGroup.Item className="fs-1" style={customGroupStyle}>
-                $ {product.price}
-              </ListGroup.Item>
-            </ListGroup>
-            <Card.Body className="mt-2">
-              <Button variant="primary">Go somewhere</Button>
-              <CustomButton className="ms-5">
+            <div className="product-category">
+              Categoría: {product.category}
+            </div>
+            <div className="product-price">$ {product.price}</div>
+            <div className="product-actions">
+              <Button variant="btn btn-warning">Comprar ahora</Button>
+              <CustomButton>
                 <Link to={`/item/${product.id}`}>Ir al detalle</Link>
               </CustomButton>
-            </Card.Body>
+            </div>
           </Card>
         </Col>
       ))}

@@ -7,7 +7,7 @@
     "quantity": 50,
     "price": 29.99,
     "discountPercentage": 10,
-    "image": "https://i.imgur.com/4fJvHTI.png"
+    "image": "https://i.imgur.com/n6YJLND.png"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "quantity": 30,
     "price": 79.99,
     "discountPercentage": 15,
-    "image": "https://i.imgur.com/7xfYZHD.png"
+    "image": "https://i.imgur.com/HjndTCT.png"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "quantity": 25,
     "price": 74.99,
     "discountPercentage": 10,
-    "image": "https://i.imgur.com/bFMbKft.png"
+    "image": "https://i.imgur.com/rDAqhF0.png"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "quantity": 40,
     "price": 49.99,
     "discountPercentage": 5,
-    "image": "https://i.imgur.com/XZFEqkP.png"
+    "image": "https://i.imgur.com/kqdE26j.png"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "quantity": 35,
     "price": 54.99,
     "discountPercentage": 7,
-    "image": "https://i.imgur.com/0IwzGIv.png"
+    "image": "https://i.imgur.com/3YmnUZ9.png"
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "quantity": 30,
     "price": 52.99,
     "discountPercentage": 10,
-    "image": "https://i.imgur.com/LZAKv1i.png"
+    "image": "https://i.imgur.com/uwGGu5Q.png"
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "quantity": 45,
     "price": 32.99,
     "discountPercentage": 12,
-    "image": "https://i.imgur.com/31kBwJc.png"
+    "image": "https://i.imgur.com/A5zTIHI.png"
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "quantity": 50,
     "price": 27.99,
     "discountPercentage": 8,
-    "image": "https://i.imgur.com/YYpqx1Z.png"
+    "image": "https://i.imgur.com/1bTV4qC.png"
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "quantity": 60,
     "price": 19.99,
     "discountPercentage": 5,
-    "image": "https://i.imgur.com/UDeOVSF.png"
+    "image": "https://i.imgur.com/ovA1INM.png"
   },
   {
     "id": 10,
@@ -97,86 +97,86 @@
     "quantity": 70,
     "price": 24.99,
     "discountPercentage": 5,
-    "image": "https://i.imgur.com/RyHTZBM.png"
+    "image": "https://i.imgur.com/PipPFAp.png"
   },
   {
-        "id": 11,
-        "title": "Remera Crisis Nórdica",
-        "description": "Black T-shirt with a Nordic vs Skull Legion-themed design, featuring a detailed battle scene.",
-        "category": "T-shirts",
-        "quantity": 40,
-        "price": 34.99,
-        "discountPercentage": 10,
-        "image": "https://i.imgur.com/VeJX8CE.png"
-    },
-    {
-        "id": 12,
-        "title": "Campera Nordic vs Skull Legion",
-        "description": "Black leather jacket with a Nordic vs Skull Legion-themed design on the back.",
-        "category": "Jackets",
-        "quantity": 20,
-        "price": 89.99,
-        "discountPercentage": 15,
-        "image": "https://i.imgur.com/b7KDmUA.png"
-    },
-    {
-        "id": 13,
-        "title": "Campera Básica Skull Clothing",
-        "description": "Denim jacket with a Skull Clothing logo and a skull design on the back.",
-        "category": "Jackets",
-        "quantity": 25,
-        "price": 64.99,
-        "discountPercentage": 12,
-        "image": "https://i.imgur.com/qDYTrtL.png"
-    },
-    {
-        "id": 14,
-        "title": "Campera Puffer Skull Clothing",
-        "description": "Black puffer jacket with a Skull Clothing logo and a quilted design.",
-        "category": "Jackets",
-        "quantity": 20,
-        "price": 99.99,
-        "discountPercentage": 20,
-        "image": "https://i.imgur.com/vNUk9BP.png"
-    },
-    {
-        "id": 15,
-        "title": "Cinturón Táctico Skull",
-        "description": "Black tactical belt with a skull-themed design and multiple pouches.",
-        "category": "Belts",
-        "quantity": 35,
-        "price": 29.99,
-        "discountPercentage": 10,
-        "image": "https://i.imgur.com/Ef1PjQv.png"
-    },
-    {
-        "id": 16,
-        "title": "Pantalón Básico Baggy Skull",
-        "description": "Black baggy pants with subtle skull embroidery on the pockets.",
-        "category": "Pants",
-        "quantity": 50,
-        "price": 39.99,
-        "discountPercentage": 8,
-        "image": "https://i.imgur.com/c0Lykby.png"
-    },
-    {
-        "id": 17,
-        "title": "Pantalón Skinny Jean Skull Clothing",
-        "description": "Black skinny jeans with 'SKULL CLOTHING' text across the front and skull details on the back pockets.",
-        "category": "Pants",
-        "quantity": 45,
-        "price": 59.99,
-        "discountPercentage": 10,
-        "image": "https://i.imgur.com/RxZ5kns.png"
-    },
-    {
-        "id": 18,
-        "title": "Cinturón Cadena Skull",
-        "description": "Black belt with a skull buckle and a decorative chain.",
-        "category": "Belts",
-        "quantity": 40,
-        "price": 24.99,
-        "discountPercentage": 5,
-        "image": "https://i.imgur.com/FT0MVDD.png"
-    }
+    "id": 11,
+    "title": "Remera Crisis Nórdica",
+    "description": "Black T-shirt with a Nordic vs Skull Legion-themed design, featuring a detailed battle scene.",
+    "category": "T-shirts",
+    "quantity": 40,
+    "price": 34.99,
+    "discountPercentage": 10,
+    "image": "https://i.imgur.com/r2Pdbk4.png"
+  },
+  {
+    "id": 12,
+    "title": "Campera Nordic vs Skull Legion",
+    "description": "Black leather jacket with a Nordic vs Skull Legion-themed design on the back.",
+    "category": "Jackets",
+    "quantity": 20,
+    "price": 89.99,
+    "discountPercentage": 15,
+    "image": "https://i.imgur.com/Cpg1Rly.png"
+  },
+  {
+    "id": 13,
+    "title": "Campera Básica Skull Clothing",
+    "description": "Denim jacket with a Skull Clothing logo and a skull design on the back.",
+    "category": "Jackets",
+    "quantity": 25,
+    "price": 64.99,
+    "discountPercentage": 12,
+    "image": "https://i.imgur.com/MK6iUsB.png"
+  },
+  {
+    "id": 14,
+    "title": "Campera Puffer Skull Clothing",
+    "description": "Black puffer jacket with a Skull Clothing logo and a quilted design.",
+    "category": "Jackets",
+    "quantity": 20,
+    "price": 99.99,
+    "discountPercentage": 20,
+    "image": "https://i.imgur.com/Df9nDVp.png"
+  },
+  {
+    "id": 15,
+    "title": "Cinturón Táctico Skull",
+    "description": "Black tactical belt with a skull-themed design and multiple pouches.",
+    "category": "Belts",
+    "quantity": 35,
+    "price": 29.99,
+    "discountPercentage": 10,
+    "image": "https://i.imgur.com/lex7Hbc.png"
+  },
+  {
+    "id": 16,
+    "title": "Pantalón Básico Baggy Skull",
+    "description": "Black baggy pants with subtle skull embroidery on the pockets.",
+    "category": "Pants",
+    "quantity": 50,
+    "price": 39.99,
+    "discountPercentage": 8,
+    "image": "https://i.imgur.com/K2nFcMk.png"
+  },
+  {
+    "id": 17,
+    "title": "Pantalón Skinny Jean Skull Clothing",
+    "description": "Black skinny jeans with 'SKULL CLOTHING' text across the front and skull details on the back pockets.",
+    "category": "Pants",
+    "quantity": 45,
+    "price": 59.99,
+    "discountPercentage": 10,
+    "image": "https://i.imgur.com/YkeiKWw.png"
+  },
+  {
+    "id": 18,
+    "title": "Cinturón Cadena Skull",
+    "description": "Black belt with a skull buckle and a decorative chain.",
+    "category": "Belts",
+    "quantity": 40,
+    "price": 24.99,
+    "discountPercentage": 5,
+    "image": "https://i.imgur.com/YZDRpKm.png"
+  }
 ]

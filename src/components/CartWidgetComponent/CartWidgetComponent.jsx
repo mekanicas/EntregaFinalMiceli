@@ -5,7 +5,7 @@ import { CartContext } from "../../context/CartContext";
 
 const CartWidgetComponent = () => {
   const customStyles = {
-    color: "white",
+    color: "black",
     fontSize: "1.3rem",
     marginRight: "0.5rem",
   };

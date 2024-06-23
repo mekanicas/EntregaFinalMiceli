@@ -5,10 +5,10 @@ const ItemListContainer = ({ greeting }) => {
     marginTop: "20px",
     padding: "5px",
     border: "1px solid #ddd",
-    backgroundColor: "#fff",
+    backgroundColor: "#ff4e2f",
     borderRadius: "5px",
     textAlign: "center",
-    color: "#222",
+    color: "#fff",
     width: "100%",
   };
   return (

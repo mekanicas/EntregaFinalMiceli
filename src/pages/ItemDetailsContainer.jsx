@@ -1,5 +1,5 @@
 import React from "react";
-import {CartContext} from "../context/CartContext"
+import { CartContext } from "../context/CartContext";
 import styled from "styled-components";
 import CustomButton from "../components/StyledComponents/CustomButton";
 import Button from "react-bootstrap/Button";
@@ -13,22 +13,23 @@ import { Link } from "react-router-dom";
 import { getProductById } from "../services/productsServices.js";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import "./ItemDetailContainer.css";
 
 const ItemDetailsContainer = () => {
-  const {cart, addToCart, removeFromCart} = React.useContext (CartContext);
-  const [quantity, setQuantity] = React.useState(0)
+  const { cart, addToCart, removeFromCart } = React.useContext(CartContext);
+  const [quantity, setQuantity] = React.useState(0);
   const [product, setProduct] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
   const handleAdd = () => {
-    setQuantity(quantity + 1)
-    addToCart(product, 1)
-  }
+    setQuantity(quantity + 1);
+    addToCart(product, 1);
+  };
 
   const handleRemove = () => {
-    setQuantity(quantity - 1)
-    removeFromCart(product, 1)
-  }
+    setQuantity(quantity - 1);
+    removeFromCart(product, 1);
+  };
 
   const { id } = useParams();
 
@@ -46,106 +47,52 @@ const ItemDetailsContainer = () => {
   }, [id]);
 
   return (
-    <Row xs={1} md={3} className="g-4">
-      <Col key={product ? product.id : "skeleton"}>
-        <Card style={{ width: "18rem" }}>
+    <div className="item-details-container">
+      {loading ? (
+        <Skeleton height={500} width="50%" />
+      ) : (
+        <div className="item-image-container">
+          <img src={product.image} alt={product.title} />
+        </div>
+      )}
+      <div className="item-info-container">
+        <div>
           {loading ? (
-            <Skeleton height={180} />
+            <>
+              <Skeleton height={30} />
+              <Skeleton height={20} width="80%" />
+            </>
           ) : (
-            <Card.Img variant="top" src={product.image} />
+            <>
+              <h1 className="item-title">{product.title}</h1>
+              <div className="item-price">$ {product.price}</div>
+              <div className="item-category">Categoría: {product.category}</div>
+            </>
           )}
-          <Card.Body>
-            {loading ? (
-              <>
-                <Skeleton
-                  height={30}
-                  baseColor="#2A2D33"
-                  highlightColor="#3A3D43"
-                  duration={5}
-                />
-                <Skeleton
-                  count={3}
-                  baseColor="#2A2D33"
-                  highlightColor="#3A3D43"
-                  duration={5}
-                />
-              </>
-            ) : (
-              <>
-                <Card.Title>{product.title}</Card.Title>
-                <Card.Text>{product.description}</Card.Text>
-              </>
-            )}
-          </Card.Body>
-          <ListGroup className="list-group-flush">
-            {loading ? (
-              <>
-                <ListGroup.Item>
-                  <Skeleton
-                    height={30}
-                    baseColor="#2A2D33"
-                    highlightColor="#3A3D43"
-                    duration={5}
-                  />
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Skeleton
-                    height={30}
-                    baseColor="#2A2D33"
-                    highlightColor="#3A3D43"
-                    duration={5}
-                  />
-                </ListGroup.Item>
-              </>
-            ) : (
-              <>
-                <ListGroup.Item className="fs-1">
-                  $ {product.price}
-                </ListGroup.Item>
-                <ListGroup.Item>{product.category}</ListGroup.Item>
-              </>
-            )}
-          </ListGroup>
-          <Card.Body className="mt-2 container">
-            {loading ? (
-              <Skeleton
-                height={40}
-                width="100%"
-                baseColor="#2A2D33"
-                highlightColor="#3A3D43"
-                duration={5}
-              />
-            ) : (
-              <>
-                <Button className="p-2 g-col-6 row" variant="success">
-                  Comprar ahora
-                </Button>
-                <Link to="#" className="row mt-2">
-                  <CustomButton>Ver más</CustomButton>
-                </Link>
-              </>
-            )}
-          </Card.Body>
-          <Card.Body className="mt-2 container">
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <button
-                onClick={handleRemove}
-                style={{ color: "black", cursor: "pointer" }}
-              >
-                -
-              </button>
-              <span style={{ margin: "0 10px" }}>{quantity}</span>
-              <button
-                onClick={handleAdd}
-                style={{ color: "black", cursor: "pointer" }}
-              >
-                +
-              </button>
-            </div>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+        </div>
+        <div className="item-actions">
+          {loading ? (
+            <Skeleton height={40} width="100%" />
+          ) : (
+            <>
+              <div className="quantity-selector">
+                <button onClick={handleRemove} disabled={quantity <= 0}>
+                  -
+                </button>
+                <span>{quantity}</span>
+                <button onClick={handleAdd}>+</button>
+              </div>
+              <CustomButton className="custom-button">
+                Agregar al carrito
+              </CustomButton>
+            </>
+          )}
+        </div>
+        <div className="item-description">
+          {loading ? <Skeleton count={5} /> : <p>{product.description}</p>}
+        </div>
+      </div>
+    </div>
   );
 };
 
