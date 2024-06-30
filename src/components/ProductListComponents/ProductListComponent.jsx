@@ -3,32 +3,34 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./ProductListComponents.css";
-
-import { getAllProducts } from "../../services/productsServices";
+import "../../hooks/useProductsOld.jsx";
 import CustomButton from "../StyledComponents/CustomButton";
+import useProductsOld from "../../hooks/useProductsOld.jsx";
+import { useParams } from "react-router-dom";
+import { getAllProducts } from "../../services/productsServices.js";
+import { getAll } from "firebase/remote-config";
+import { useState, useEffect } from "react";
+import products from "../../data/products.js"
 
 const ProductsListComponent = () => {
-  const [products, setProducts] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
+  const [items, setItems] = useState([]);
+  const [titulo, setTitulo] = useState("");
+  const { products, loading, error } = useProductsOld();
+  const { categoria } = useParams();
 
-  React.useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const fetchedProducts = await getAllProducts();
-        setProducts(fetchedProducts);
-        setLoading(false);
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, []);
+  useEffect(() => {
+    if (categoria) {
+      setItems(getAllProducts().filter((item) => item.category === categoria));
+      setTitulo(categoria);
+    } else {
+      setItems(getAllProducts());
+      setTitulo("Productos");
+    }
+  }, [categoria]);
 
   if (loading) {
     return (

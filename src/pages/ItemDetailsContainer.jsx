@@ -14,12 +14,14 @@ import { getProductById } from "../services/productsServices.js";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./ItemDetailContainer.css";
+import { useProductByIdOld } from "../hooks/useProductsByIdOld.jsx";
 
 const ItemDetailsContainer = () => {
+  const { id } = useParams();
+  const { product, loading, error } = useProductByIdOld(id);
+
   const { cart, addToCart, removeFromCart } = React.useContext(CartContext);
   const [quantity, setQuantity] = React.useState(0);
-  const [product, setProduct] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
 
   const handleAdd = () => {
     setQuantity(quantity + 1);
@@ -31,20 +33,10 @@ const ItemDetailsContainer = () => {
     removeFromCart(product, 1);
   };
 
-  const { id } = useParams();
+    if (error) {
+      return <div>Error loading product details</div>;
+    }
 
-  React.useEffect(() => {
-    setLoading(true);
-    getProductById(id)
-      .then((productData) => {
-        setProduct(productData);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, [id]);
 
   return (
     <div className="item-details-container">

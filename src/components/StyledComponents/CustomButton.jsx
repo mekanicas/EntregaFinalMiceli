@@ -6,7 +6,7 @@ const CustomButton = styled.button`
   color: white;
   border: 1px solid white;
   border-radius: 7px;
-  height: 40px;
+  height: 65px;
   width: 124px;
   font-size: 16px;
   text-decoration: none;

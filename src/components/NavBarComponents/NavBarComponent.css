@@ -1,5 +1,7 @@
+/* CSS adjustments for dropdown */
 :root {
   --color-primary: #ff4e2f;
+  --color-background: #343950; /* Fondo oscuro */
 }
 
 ul {
@@ -7,27 +9,33 @@ ul {
   padding: 0;
   list-style: none;
 }
+
 nav {
   padding: 10px 30px 0;
   margin: auto;
 }
+
 nav > :is(h1, .cartComponent) {
   width: 34px;
   height: 34px;
   display: grid;
   place-items: center;
 }
+
 nav h1 {
   background: #343950;
   border-radius: 8px;
   font-size: 16px;
 }
+
 nav .cartComponent {
   color: #fff;
   font-size: 20px;
 }
+
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .menu {
@@ -38,18 +46,25 @@ a {
   align-items: stretch;
   height: 70px;
 }
+
 .menu li {
   display: inline-block;
-  width: 80px;
   color: #999;
   transition: all 0.3s ease-in-out;
+  position: relative;
 }
+
+.menu li a {
+  color: #343950;
+}
+
 .menu li:hover .submenu {
-  height: 85px;
+  height: auto;
+  max-height: 200px; /* adjust as needed */
 }
 
 .menu > li:hover > a {
-  color: #fff;
+  color: #ff4e2f; /* Cambiar el color del texto al hacer hover */
 }
 
 .menu > li:hover > a::before {
@@ -62,8 +77,7 @@ a {
   position: absolute;
   left: 0;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
+  flex-direction: column;
   width: 100%;
   background-color: var(--color-primary);
   height: 0;
@@ -71,6 +85,7 @@ a {
   box-sizing: border-box;
   transition: height 0.3s ease-in-out;
 }
+
 .menu li .submenu a {
   color: #fff;
   opacity: 0;
@@ -82,7 +97,7 @@ a {
 }
 
 .menu > li .submenu a:hover {
-  background: rgba(0 0 0/ 20%);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .menu > li a {
@@ -131,4 +146,18 @@ a {
   width: 25px;
   text-align: center;
   cursor: pointer;
+}
+
+.custom-dropdown {
+  background-color: black !important; 
+  color: white; 
+  font-family: 'YourCustomFont', sans-serif;
+}
+
+.custom-dropdown .dropdown-item {
+  color: black;
+}
+
+.custom-dropdown .dropdown-item:hover {
+  background-color: #f1f1f1; 
 }
