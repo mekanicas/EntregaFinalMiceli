@@ -14,27 +14,39 @@ import { useParams } from "react-router-dom";
 import { getAllProducts } from "../../services/productsServices.js";
 import { getAll } from "firebase/remote-config";
 import { useState, useEffect } from "react";
-import products from "../../data/products.js";
-import useProductsByCategoryNashe from "../../hooks/useProductsByCategory.jsx";
+
 
 const ProductsListComponent = () => {
-  const [loading, setLoading] = useState(false);
-  /* const { products, loading, error } = useProductsOld(); */
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { category } = useParams();
-  const { sexo:tantrico } = useProductsByCategoryNashe(category);
-  console.log(tantrico)
-  useEffect(() => {if(tantrico.length > 0 ){
-    setLoading(true)
 
-    }else{
-      setLoading(false)
-    }
-  }  , [tantrico])
+  useEffect(() => {
+    const fetchProducts = async () => {
+      // Simular una carga de datos con un retraso de 3 segundos
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      const products = getAllProducts();
+      if (category) {
+        setItems(products.filter((item) => item.category === category));
+      } else {
+        setItems(products);
+      }
+      setLoading(false);
+    };
 
-  if (loading) {
-    return (
-      <Row xs={1} md={3} className="g-4">
-        {tantrico.map((product) => (
+    fetchProducts();
+  }, [category]);
+
+  return (
+    <Row xs={1} md={3} className="g-4">
+      {loading ? (
+        Array.from({ length: 6 }).map((_, index) => (
+          <Col key={index}>
+            <Skeleton height={300} />
+          </Col>
+        ))
+      ) : (
+        items.map((product) => (
           <Col key={product.id}>
             <Card className="product-card">
               <Card.Img
@@ -43,16 +55,12 @@ const ProductsListComponent = () => {
                 src={product.image}
               />
               <Card.Body>
-                <Card.Title className="product-title">
-                  {product.title}
-                </Card.Title>
+                <Card.Title className="product-title">{product.title}</Card.Title>
                 <Card.Text className="product-description">
                   {product.description}
                 </Card.Text>
               </Card.Body>
-              <div className="product-category">
-                Categoría: {product.category}
-              </div>
+              <div className="product-category">Categoría: {product.category}</div>
               <div className="product-price">$ {product.price}</div>
               <div className="product-actions">
                 <Button variant="btn btn-warning">Comprar ahora</Button>
@@ -62,32 +70,10 @@ const ProductsListComponent = () => {
               </div>
             </Card>
           </Col>
-        ))}
-      </Row>
-    );
-  }
-  
-  
-
-  /*   if (loading) {
-  return (
-    <Row xs={1} md={3} className="g-4">
-      {filteredProducts.map((product) => (
-        <Col key={product.id}>
-          <Card className="product-card">
-            <Skeleton height={300} className="product-image" />
-            <Card.Body>
-              <Skeleton height={30} />
-              <Skeleton count={3} style={{ marginTop: 10 }} />
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
+        ))
+      )}
     </Row>
   );
-  } */
-
-  
 };
 
 export default ProductsListComponent;
