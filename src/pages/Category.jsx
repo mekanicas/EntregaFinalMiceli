@@ -1,12 +1,12 @@
 import React from "react";
 import ProductListComponent from "../components/ProductListComponents/ProductListComponent.jsx";
 import { useParams } from "react-router-dom";
-import { useProductsByCategory } from "../hooks/useProductsByCategory";
+import useProductsByCategoryNashe from "../hooks/useProductsByCategory.jsx";
 
 const category = () => {
-  const { id } = useParams();
-
-  const { products } = useProductsByCategory(id);
+  const { category } = useParams();
+  console.log(category);
+  const { products } = useProductsByCategoryNashe(category);
   return <ProductListComponent products={products}/>
 };
 

@@ -10,6 +10,7 @@ import { getAllCategories } from "../../services/productsServices.js";
 import category from "../../pages/Category.jsx";
 
 const NavBarComponent = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const uniqueCategories = Array.from(
     new Set(products.map((product) => product.category))
   );
@@ -25,6 +26,8 @@ const NavBarComponent = () => {
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               {uniqueCategories.map((category) => (
                 <NavDropdown.Item key={category} href={`/category/${category}`}>
+                  {/* {console.log("Categoría en Navbar:", category)}
+                  {console.log("URL en Navbar:", `/category/${category}`)} */}
                   {category}
                 </NavDropdown.Item>
               ))}

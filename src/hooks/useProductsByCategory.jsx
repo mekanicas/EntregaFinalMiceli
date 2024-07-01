@@ -1,18 +1,27 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { getAllProducts } from "../services/productsServices.js";
 import { getProductsByCategory } from "../services/productsServices.js";
 
-export const useProductsByCategory = (category) => {
+export const useProductsByCategoryNashe = (category) => {
   const [products, setProducts] = React.useState([]);
+  const [sexo, setSexo] = useState([]);
 
   React.useEffect(() => {
-    getProductsByCategory(category)
-      .then((res) => {
-        setProducts(res.data.products);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const fetchProducts = async () => {
+      let fetchedProducts;
+      if (category) {
+        fetchedProducts = await (getProductsByCategory(category));
+      } else {
+        fetchedProducts = await (getAllProducts());
+      }
+      setSexo(fetchedProducts || []);
+    };
+    fetchProducts();
   }, [category]);
 
-  return { products };
+
+  return { sexo };
 };
+
+export default useProductsByCategoryNashe;

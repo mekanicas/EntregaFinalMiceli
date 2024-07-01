@@ -12,7 +12,7 @@ export const MainRoutes = () => {
       <NavBarComponent />
       <Routes>
         <Route path="/" element={<Home pageTitle="Productos" />} />
-        <Route path="/category/:id" element={<Category />} />
+        <Route path="/category/:category" element={<Category />} />
         <Route path="item/:id" element={<ItemDetailsContainer />} />
       </Routes>
       <FooterBarComponent />
