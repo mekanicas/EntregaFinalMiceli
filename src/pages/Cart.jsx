@@ -3,16 +3,30 @@ import { CartContext } from "../context/CartContext";
 import './Cart.css';
 
 const Cart = () => {
-  const { cart, removeFromCart, deleteFromCart } =
+  const { cart, removeFromCart, deleteFromCart, addToCart } =
     React.useContext(CartContext);
 
   const handleRemoveOne = (item) => {
     removeFromCart(item, 1);
   };
 
+  const handleAddItem = (item) => {
+    addToCart(item, 1);
+  };
+
   const handleDeleteItem = (item) => {
     deleteFromCart(item);
   };
+
+  const totalAmount = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+  const freeShippingThreshold = 200;
+  const progressPercentage = Math.min(
+    (totalAmount / freeShippingThreshold) * 100,
+    100
+  );
 
   return (
     <div className="cart-container">
@@ -28,6 +42,7 @@ const Cart = () => {
                   <p>{item.description}</p>
                   <p className="item-price">Precio unitario: ${item.price}</p>
                   <div className="item-quantity">
+                    <button onClick={() => handleAddItem(item)}>+</button>
                     <button onClick={() => handleRemoveOne(item)}>-</button>
                     <span>{item.quantity}</span>
                     <button onClick={() => handleDeleteItem(item)}>
@@ -37,35 +52,27 @@ const Cart = () => {
                 </div>
               </div>
               <div className="item-total">
-                <p>Total: ${item.price * item.quantity}</p>
+                <p>Total: ${Math.round(item.price * item.quantity)}</p>
               </div>
             </div>
           ))}
+          <div className="shipping-progress">
+            <div
+              className="progress-bar"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+          </div>
+          <p className="shipping-message">
+            {totalAmount >= freeShippingThreshold
+              ? "¡Genial! Tenés envío gratis"
+              : `Envío gratis superando los $${freeShippingThreshold.toFixed(
+                  2
+                )}`}
+          </p>
           <div className="cart-summary">
-            <p>
-              Subtotal: $
-              {cart.reduce(
-                (total, item) => total + item.price * item.quantity,
-                0
-              )}
-            </p>
-            <p>Envío gratis superando los $200</p>
-            <p>
-              Total: $
-              {cart.reduce(
-                (total, item) => total + item.price * item.quantity,
-                0
-              )}
-            </p>
-            <p>
-              O hasta 9 cuotas de $
-              {(
-                cart.reduce(
-                  (total, item) => total + item.price * item.quantity,
-                  0
-                ) / 9
-              ).toFixed(2)}
-            </p>
+            <p>Subtotal (sin envío): ${totalAmount.toFixed(2)}</p>
+            <p>Total: ${totalAmount.toFixed(2)}</p>
+            <button className="checkout-button">Finalizar compra</button>
           </div>
         </div>
       ) : (

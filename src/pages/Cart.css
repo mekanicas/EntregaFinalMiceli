@@ -60,9 +60,43 @@
   font-weight: bold;
 }
 
+.shipping-progress {
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.shipping-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .cart-summary {
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #ddd;
   text-align: right;
+}
+
+.checkout-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkout-button:hover {
+  background-color: #45a049;
 }
