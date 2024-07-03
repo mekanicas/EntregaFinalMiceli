@@ -12,10 +12,29 @@
 .cart-item {
   display: flex;
   justify-content: space-between;
+  border-radius: 20px;
   border: 1px solid #ddd;
   margin-bottom: 10px;
   padding: 10px;
 }
+
+.item-details .button-animation{
+    border-radius: 10px;
+}
+
+.item-details .button-animation:hover{
+    border-radius: 10px;
+    border-color: #45a049;
+}
+
+.item-details .button-animation-delete{
+    border-radius: 10px;
+}
+
+.item-details .button-animation-delete:hover{
+    border-color: #e4413b;
+}
+
 
 .item-details {
   display: flex;
@@ -85,6 +104,7 @@
   margin-top: 20px;
   padding: 20px;
   border: 1px solid #ddd;
+  border-radius: 10px;
   text-align: right;
 }
 

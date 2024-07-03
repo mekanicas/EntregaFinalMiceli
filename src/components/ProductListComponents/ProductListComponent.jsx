@@ -23,8 +23,7 @@ const ProductsListComponent = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      // Simular una carga de datos con un retraso de 3 segundos
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       const products = getAllProducts();
       if (category) {
         setItems(products.filter((item) => item.category === category));

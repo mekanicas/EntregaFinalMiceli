@@ -42,10 +42,23 @@ const Cart = () => {
                   <p>{item.description}</p>
                   <p className="item-price">Precio unitario: ${item.price}</p>
                   <div className="item-quantity">
-                    <button onClick={() => handleAddItem(item)}>+</button>
-                    <button onClick={() => handleRemoveOne(item)}>-</button>
+                    <button
+                      className="button-animation"
+                      onClick={() => handleAddItem(item)}
+                    >
+                      +
+                    </button>
+                    <button
+                      className="button-animation-delete"
+                      onClick={() => handleRemoveOne(item)}
+                    >
+                      -
+                    </button>
                     <span>{item.quantity}</span>
-                    <button onClick={() => handleDeleteItem(item)}>
+                    <button
+                      className="button-animation-delete"
+                      onClick={() => handleDeleteItem(item)}
+                    >
                       Eliminar
                     </button>
                   </div>
