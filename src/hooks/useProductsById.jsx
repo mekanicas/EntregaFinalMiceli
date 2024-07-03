@@ -30,3 +30,5 @@ export const useProductById = (id) => {
 
   return { product, loading, error };
 };
+
+export default useProductById;

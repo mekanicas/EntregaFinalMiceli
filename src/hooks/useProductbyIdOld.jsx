@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/* import React, { useState, useEffect } from "react";
 
 export const useProductById = (id) => {
   const [product, setProduct] = useState(null);
@@ -19,3 +19,4 @@ export const useProductById = (id) => {
 
   return { productbyId, loading };
 };
+ */

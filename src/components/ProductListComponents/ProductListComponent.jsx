@@ -7,34 +7,31 @@ import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./ProductListComponents.css";
-import "../../hooks/useProductsOld.jsx";
 import CustomButton from "../StyledComponents/CustomButton";
-import useProductsOld from "../../hooks/useProductsOld.jsx";
 import { useParams } from "react-router-dom";
 import { getAllProducts } from "../../services/productsServices.js";
 import { getAll } from "firebase/remote-config";
 import { useState, useEffect } from "react";
+import useProducts from "../../hooks/useProducts.jsx"
+import "../../hooks/useProducts.jsx";
 
 
 const ProductsListComponent = () => {
+  const { products, loading, error } = useProducts();
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
   const { category } = useParams();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      const products = getAllProducts();
-      if (category) {
-        setItems(products.filter((item) => item.category === category));
-      } else {
-        setItems(products);
-      }
-      setLoading(false);
-    };
+    if (category) {
+      setItems(products.filter((item) => item.category === category));
+    } else {
+      setItems(products);
+    }
+  }, [category, products]);
 
-    fetchProducts();
-  }, [category]);
+  if (error) {
+    return <div>Error al obtener productos: {error.message}</div>;
+  }
 
   return (
     <Row xs={1} md={3} className="g-4">

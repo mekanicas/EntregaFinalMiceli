@@ -1,27 +1,19 @@
 import React from "react";
 import { CartContext } from "../context/CartContext";
-import styled from "styled-components";
 import CustomButton from "../components/StyledComponents/CustomButton";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { getProductById } from "../services/productsServices.js";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./ItemDetailContainer.css";
-import { useProductByIdOld } from "../hooks/useProductsByIdOld.jsx";
+import { useProductById } from "../hooks/useProductsById.jsx";
+import { useContext, useState, UseEffect } from "react";
 
 const ItemDetailsContainer = () => {
   const { id } = useParams();
-  const { product, loading, error } = useProductByIdOld(id);
-
-  const { cart, addToCart, removeFromCart } = React.useContext(CartContext);
-  const [quantity, setQuantity] = React.useState(0);
+  const { product, loading, error } = useProductById(id);
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(0);
 
   const handleAdd = () => {
     setQuantity(quantity + 1);
@@ -33,10 +25,9 @@ const ItemDetailsContainer = () => {
     removeFromCart(product, 1);
   };
 
-    if (error) {
-      return <div>Error loading product details</div>;
-    }
-
+  if (error) {
+    return <div>Error loading product details</div>;
+  }
 
   return (
     <div className="item-details-container">
