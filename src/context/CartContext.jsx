@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
       const existingProductIndex = prevCart.findIndex(
         (item) => item.id === product.id
       );
-      if (existingProductIndex > 0) {
+      if (existingProductIndex > -1) {
         const newCart = [...prevCart];
         newCart[existingProductIndex] = {
           ...newCart[existingProductIndex],
@@ -22,6 +22,7 @@ export const CartProvider = ({ children }) => {
       }
     });
   };
+
   const removeFromCart = (product, quantity) => {
     setCart((prevCart) => {
       return prevCart.reduce((acc, item) => {
@@ -38,8 +39,16 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const deleteFromCart = (product) => {
+    setCart((prevCart) => {
+      return prevCart.filter((item) => item.id !== product.id);
+    });
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, deleteFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );

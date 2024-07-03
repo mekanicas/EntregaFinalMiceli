@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartWidgetComponent = () => {
   const customStyles = {
@@ -16,8 +17,10 @@ const CartWidgetComponent = () => {
 
   return (
     <>
-      <FontAwesomeIcon icon={faCartPlus} style={customStyles} />
-      <span style={customStyles}>{totalItems}</span>
+      <Link to="/cart" style={{ textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faCartPlus} style={customStyles} />
+        <span style={customStyles}>{totalItems}</span>
+      </Link>
     </>
   );
 };
