@@ -9,8 +9,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "./ProductListComponents.css";
 import CustomButton from "../StyledComponents/CustomButton";
 import { useParams } from "react-router-dom";
-import { getAllProducts } from "../../services/productsServices.js";
-import { getAll } from "firebase/remote-config";
 import { useState, useEffect } from "react";
 import useProducts from "../../hooks/useProducts.jsx"
 import "../../hooks/useProducts.jsx";

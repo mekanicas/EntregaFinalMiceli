@@ -1,13 +1,10 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import products from "../../data/products.js";
 import CartWidgetComponent from "../CartWidgetComponent/CartWidgetComponent.jsx";
 import imagenLogo from "./NavBarImages/skull.png";
 import LinkInicio from "../StyledComponents/StyledLink.jsx";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { getAllCategories } from "../../services/productsServices.js";
-import category from "../../pages/Category.jsx";
 
 const NavBarComponent = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -26,8 +23,6 @@ const NavBarComponent = () => {
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               {uniqueCategories.map((category) => (
                 <NavDropdown.Item key={category} href={`/category/${category}`}>
-                  {/* {console.log("Categoría en Navbar:", category)}
-                  {console.log("URL en Navbar:", `/category/${category}`)} */}
                   {category}
                 </NavDropdown.Item>
               ))}
