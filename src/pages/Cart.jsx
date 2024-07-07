@@ -2,6 +2,7 @@ import React from 'react';
 import { CartContext } from "../context/CartContext";
 import './Cart.css';
 import { Link } from 'react-router-dom';
+import CustomButton from '../components/StyledComponents/CustomButton';
 
 const Cart = () => {
   const { cart, removeFromCart, deleteFromCart, addToCart } =
@@ -103,8 +104,10 @@ const Cart = () => {
           </p>
           <div className="cart-summary">
             <p>Subtotal (sin envío): ${totalAmount.toFixed(2)}</p>
-            <p>Total: ${totalAmount.toFixed(2)}</p>
-            <Link to={'/checkout'}>Ir al pago</Link>
+            <p>Total: ${totalAmount.toFixed(2)}</p>;
+            <CustomButton>
+              <Link to={"/checkout"}>Ir al pago</Link>
+            </CustomButton>
           </div>
         </div>
       ) : (
