@@ -117,7 +117,7 @@ export const Checkout = () => {
         <div className="order-total">
           <span>Total</span>
           <span>
-            ${cart.reduce((acc, item) => acc + item.price * item.quantity, 0)}
+            ${Math.round(cart.reduce((acc, item) => acc + item.price * item.quantity, 0))}
           </span>
         </div>
       </div>
