@@ -1,0 +1,63 @@
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  width: 50vh;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.contact-details, .delivery-details, .buyer-details, .order-summary {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label input {
+  margin-right: 10px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.checkout-button {
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #333;
+  }

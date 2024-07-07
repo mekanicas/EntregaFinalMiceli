@@ -1,6 +1,7 @@
 import React from 'react';
 import { CartContext } from "../context/CartContext";
 import './Cart.css';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeFromCart, deleteFromCart, addToCart } =
@@ -27,6 +28,24 @@ const Cart = () => {
     (totalAmount / freeShippingThreshold) * 100,
     100
   );
+
+  const createOrder = () => {
+
+    const items = cart.map(item => {
+      return{
+        id: item.id,
+        title : item.title,
+        quantity : item.quantity,
+      }
+    });
+    const order = {
+      items : items,
+    }
+
+    const db = getFirestore();
+    const ordersCollection = collection(db, 'orders');
+    addDoc(ordersCollection, order).then(({id}) => console.log(id));
+  }
 
   return (
     <div className="cart-container">
@@ -85,7 +104,7 @@ const Cart = () => {
           <div className="cart-summary">
             <p>Subtotal (sin envío): ${totalAmount.toFixed(2)}</p>
             <p>Total: ${totalAmount.toFixed(2)}</p>
-            <button className="checkout-button">Finalizar compra</button>
+            <Link to={'/checkout'}>Ir al pago</Link>
           </div>
         </div>
       ) : (
