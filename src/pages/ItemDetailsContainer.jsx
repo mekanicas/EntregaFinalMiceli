@@ -1,6 +1,5 @@
 import React from "react";
 import { CartContext } from "../context/CartContext";
-import CustomButton from "../components/StyledComponents/CustomButton";
 import { useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -64,9 +63,6 @@ const ItemDetailsContainer = () => {
                 <span>{quantity}</span>
                 <button onClick={handleAdd}>+</button>
               </div>
-              <CustomButton className="custom-button">
-                Agregar al carrito
-              </CustomButton>
             </>
           )}
         </div>

@@ -12,12 +12,19 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useProducts from "../../hooks/useProducts.jsx"
 import "../../hooks/useProducts.jsx";
+import { CartContext } from "../../context/CartContext.jsx";
 
 
 const ProductsListComponent = () => {
   const { products, loading, error } = useProducts();
   const [items, setItems] = useState([]);
   const { category } = useParams();
+  const { addToCart } =
+    React.useContext(CartContext);
+
+    const handleAddItem = (item) => {
+      addToCart(item, 1);
+    };
 
   useEffect(() => {
     if (category) {
@@ -57,7 +64,7 @@ const ProductsListComponent = () => {
               <div className="product-category">Categoría: {product.category}</div>
               <div className="product-price">$ {product.price}</div>
               <div className="product-actions">
-                <Button variant="btn btn-warning">Comprar ahora</Button>
+                <Button onClick={() => handleAddItem(product)} variant="btn btn-warning">Comprar ahora</Button>
                 <CustomButton>
                   <Link to={`/item/${product.id}`}>Ir al detalle</Link>
                 </CustomButton>
